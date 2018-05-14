@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-    @Value("${jdbc.url}")
+    @Value("${user.age}")
     private String age;
 
 }
