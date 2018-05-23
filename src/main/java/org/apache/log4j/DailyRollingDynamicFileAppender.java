@@ -1,7 +1,7 @@
 package org.apache.log4j;
 
-import com.counect.probe.utils.StringUtil;
 import org.apache.log4j.spi.LoggingEvent;
+import org.codehaus.groovy.util.StringUtil;
 
 import java.util.*;
 
@@ -71,7 +71,7 @@ public class DailyRollingDynamicFileAppender extends AppenderSkeleton {
 
         String key = Log4jContextHolder.getFileSplitKey();
         Appender appender = ALL_APPENDERS.get(key);
-        String appendFile = fileName.replace("_{key}", StringUtil.isEmpty(key) ? "" : "_"+key);
+        String appendFile = fileName.replace("_{key}", key==null || "".equals(key) ? "" : "_"+key);
         System.out.println(appendFile);
         if(appender == null) {
             System.out.println("============init append by key:"+ key+"================");

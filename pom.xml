@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.x.y.z</groupId>
     <artifactId>spring-experience</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>0.6.6</version>
 
     <properties>
@@ -12,11 +12,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.counect</groupId>
-            <artifactId>probe</artifactId>
-            <version>0.1.0</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -48,6 +43,17 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -130,7 +136,7 @@
     </dependencies>
 
     <build>
-        <finalName>daservice</finalName>
+        <finalName>experience</finalName>
         <defaultGoal>package</defaultGoal>
         <resources>
             <resource>
@@ -158,7 +164,8 @@
                     <compilerArgument>-XDignore.symbol.file</compilerArgument>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- jar包时用 -->
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>1.4</version>
@@ -186,7 +193,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>
