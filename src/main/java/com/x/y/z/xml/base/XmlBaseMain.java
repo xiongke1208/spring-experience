@@ -1,7 +1,9 @@
 package com.x.y.z.xml.base;
 
+import com.x.y.z.xml.base.targetSource.Target;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.aop.target.HotSwappableTargetSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.convert.ConversionService;
 
@@ -20,8 +22,6 @@ public class XmlBaseMain {
 
 		MyValueCalculator c = (MyValueCalculator)context.getBean("myValueCalculator");
 		System.out.println(c.computeValue("aaaa"));
-
-
 
 	}
 }
