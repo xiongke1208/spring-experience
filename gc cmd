@@ -1,0 +1,4 @@
+jmap -dump:format=b
+jstack -l pid >1.txt
+top -Hp pid
+jstat -gc pid 2000 10
